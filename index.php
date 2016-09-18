@@ -41,14 +41,15 @@
         <!--inclusions and instances-->
         <!--inclusions-->
         <?php
-            include './Business/OrganizationBusiness.php';
-            include './Business/PlanBusiness.php';
-            include './Business/ProgramBusiness.php';
+        include './Business/OrganizationBusiness.php';
+        include './Business/PlanBusiness.php';
+        include './Business/ProgramBusiness.php';
+        include './Business/ProductBusiness.php';
         ?>
         <!--instances-->
         <?php
-            $organizationBusiness = new OrganizationBusiness();
-            $organization = $organizationBusiness->getOrganization();
+        $organizationBusiness = new OrganizationBusiness();
+        $organization = $organizationBusiness->getOrganization();
         ?>
     </head>
 
@@ -72,9 +73,9 @@
                     <ul class="nav navbar-nav navbar-right ">
                         <li class="active"> <a href="#home" class="page-scroll">Home </a></li>
                         <li><a href="#service" class="page-scroll" >¿Quienes somos?</a> </li>
-                        <li><a href="#portfolio"  class="page-scroll">Portfolio</a> </li>
+                        <li><a href="#portfolio"  class="page-scroll">Planes</a> </li>
                         <li><a href="#team" class="page-scroll">Galería</a> </li>
-                        <li><a href="#blog" class="page-scroll">Blog</a> </li>
+                        <li><a href="#blog" class="page-scroll">Productos</a> </li>
                         <li><a href="#contact" class="page-scroll">Contacto</a> </li>
                     </ul>
                 </nav>
@@ -207,505 +208,362 @@
             <div class="text-center ">
                 <ul class="portfolio-wrap" id="portfolio_items">
                     <?php
-                        $programBusiness = new ProgramBusiness();
-                        $resultProgramI = $programBusiness->getInformationProgramI();
-                        foreach ($resultProgramI as $currentProgramI) {
-                    ?>                        
+                    $programBusiness = new ProgramBusiness();
+                    $resultProgramI = $programBusiness->getInformationProgramI();
+                    foreach ($resultProgramI as $currentProgramI) {
+                        ?>                        
                         <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio Ietapa ">
                             <figure>
                                 <img src="Style/images/portfolio/p1.jpg" alt="" class="img-responsive"/>                            
                                 <figcaption>
                                     <p class="links">                 
-                                        <button onclick=" <?php echo "modalSelect( '". $currentProgramI->description . "','"  . $currentProgramI->name ."' )"; ?>" type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal">
+                                        <button onclick=" <?php echo "modalSelect( '" . $currentProgramI->description . "','" . $currentProgramI->name . "' )"; ?>" type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal">
                                             <i class="fa fa-link"></i></button>                                        
                                     </p>
-                                     <p style="color: #ffffff;"> <?php echo  $currentProgramI->name ; ?> </p>                                    
+                                    <p style="color: #ffffff;"> <?php echo $currentProgramI->name; ?> </p>                                    
                                 </figcaption>
                             </figure>    
                         </li>
-                    <?php }
+                    <?php
+                    }
                     $resultProgramII = $programBusiness->getInformationProgramII();
                     foreach ($resultProgramII as $currentProgramII) {
-                    ?>                   
+                        ?>                   
                         <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio IIetapa ">
                             <figure>
                                 <img src="Style/images/portfolio/p1.jpg" alt="" class="img-responsive"/>                            
                                 <figcaption>
                                     <p class="links">                 
-                                        <button onclick=" <?php echo "modalSelect( '". $currentProgramII->description . "','"  . $currentProgramII->name ."' )"; ?>" type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal">
+                                        <button onclick=" <?php echo "modalSelect( '" . $currentProgramII->description . "','" . $currentProgramII->name . "' )"; ?>" type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal">
                                             <i class="fa fa-link"></i></button>                                        
                                     </p>
-                                     <p style="color: #ffffff;"><?php echo  $currentProgramII->name ;  ?> </p>                                    
+                                    <p style="color: #ffffff;"><?php echo $currentProgramII->name; ?> </p>                                    
                                 </figcaption>
                             </figure>    
                         </li>
-                    <?php    
+                        <?php
                     }
                     ?>
                 </ul>
             </div> <!-- Container Full End -->
         </section>  <!-- Portfolio Section End -->
-    <div class="clearfix"></div>
-    <!-- Counter End -->
-    <div class="clearfix"></div>
-    <section id="video-fact">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="landing-video">
-                        <div class="video-embed wow fadeIn" data-wow-duration="1s">
-                            <!-- Change the url -->
-                            <iframe src="http://player.vimeo.com/video/95864492?title=0&amp;byline=0&amp;portrait=0&amp;color=8aba56" width="350" height="281" allowfullscreen></iframe>
+        <div class="clearfix"></div>
+        <!-- Counter End -->
+        <div class="clearfix"></div>
+        <section id="video-fact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="landing-video">
+                            <div class="video-embed wow fadeIn" data-wow-duration="1s">
+                                <!-- Change the url -->
+                                <iframe src="http://player.vimeo.com/video/95864492?title=0&amp;byline=0&amp;portrait=0&amp;color=8aba56" width="350" height="281" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="video-text">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading p2 active" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Heading One
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body p3">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default ">
+                                    <div class="panel-heading  p2" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Heading Two
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body p3">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default ">
+                                    <div class="panel-heading p2" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Heading Three
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                        <div class="panel-body p3">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div><!-- row End -->
+            </div>
+        </section>
+        <!-- Team MEmber Start -->
+        <section id="team">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="feature_header text-center">
+                            <h3 class="feature_title">Our <b>Team Members</b></h3>
+                            <h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>
+                            <div class="divider"></div>
+                        </div>
+                    </div>  <!-- Col-md-12 End -->
+
+                    <div id="owl-demo" class="owl-carousel owl-theme team-items">
+                        <div class="item text-center">
+                            <div class="single-member">
+                                <div class="overlay-hover">
+                                    <img src="Style/images/team/pic6.jpg" alt="" class="img-responsive">
+                                    <div class="overlay-effect">
+                                        <ul class="social list-inline">
+                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                        </ul>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
+                                    </div>
+                                </div>
+                                <h3>John Abraham</h3>
+                                <h5>Chief Designer</h5>
+                            </div>
+                        </div>  <!-- item wrapper end -->
+                        <div class="item text-center">
+                            <div class="single-member">
+                                <div class="overlay-hover">
+                                    <img src="Style/images/team/pic1.jpg" alt="" class="img-responsive">
+                                    <div class="overlay-effect">
+                                        <ul class="social list-inline">
+                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                        </ul>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
+                                    </div>
+                                </div>
+                                <h3>John Abraham</h3>
+                                <h5>Chief Designer</h5>
+                            </div>
+                        </div>  <!-- item wrapper end -->
+                        <div class="item text-center">
+                            <div class="single-member">
+                                <div class="overlay-hover">
+                                    <img src="Style/images/team/pic2.jpg" alt="" class="img-responsive">
+                                    <div class="overlay-effect">
+                                        <ul class="social list-inline">
+                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                        </ul>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
+                                    </div>
+                                </div>
+                                <h3>John Abraham</h3>
+                                <h5>Chief Designer</h5>
+                            </div>
+                        </div>  <!-- item wrapper end -->
+                        <div class="item text-center">
+                            <div class="single-member">
+                                <div class="overlay-hover">
+                                    <img src="Style/images/team/pic5.jpg" alt="" class="img-responsive">
+                                    <div class="overlay-effect">
+                                        <ul class="social list-inline">
+                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                        </ul>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
+                                    </div>
+                                </div>
+                                <h3>John Abraham</h3>
+                                <h5>Chief Designer</h5>
+                            </div>
+                        </div>  <!-- item wrapper end -->
+                        <div class="item text-center">
+                            <div class="single-member">
+                                <div class="overlay-hover">
+                                    <img src="Style/images/team/pic4.jpg" alt="" class="img-responsive">
+                                    <div class="overlay-effect">
+                                        <ul class="social list-inline">
+                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                            <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                        </ul>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
+                                    </div>
+                                </div>
+                                <h3>John Abraham</h3>
+                                <h5>Chief Designer</h5>
+                            </div>
+                        </div>  <!-- item wrapper end -->
+                    </div>
+                </div>
+            </div> <!-- Conatiner Team end -->
+        </section>  <!-- Section TEam End -->
+
+        <!-- Our Team Members End -->
+        <div class="clearfix"></div>
+
+        <!-- bLOG Start -->
+        <section id="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="feature_header text-center">
+                            <h3 class="feature_title">Nuestros Productos</h3>
+                            <h4 class="feature_sub"></h4>
+                            <div class="divider"></div>
+                        </div>
+                    </div>  <!-- Col-md-12 End -->
+                </div>
+                <div class="row">
+                    <div class="blog-timeline">
+                        <div id="owl-blog" class="owl-carousel owl-theme">
+                            <?php
+                            $productBusiness = new ProductBusiness();
+                            $products = $productBusiness->getAllProducts();
+                            foreach ($products as $currentProduct) {
+                                echo '<div class="item ">';
+                                echo '<div class="single_blog">';
+                                echo '<div class="post_img text-center">';
+                                echo '<a href="Presentation/ViewProductRecipes.php?productId=' .
+                                $currentProduct->idProduct . '"><img src="' . $currentProduct->pathImage . '" alt="" class="img-responsive"></a>';
+                                echo '</div>';
+                                echo '<a href="Presentation/ViewProductRecipes.php?productId=' .
+                                $currentProduct->idProduct . '"><h4>' . $currentProduct->name . '</h4></a>';
+                                echo '<p>' . $currentProduct->description . '</p>';
+                                echo '</div>';
+                                echo '</div>';
+                            }
+                            ?>
+                        </div>
+                    </div> <!-- blog Timeline End -->
+                </div>
+            </div>
+        </section>
+        <!-- bLOG End -->
+
+        <!-- Conatct Area Start-->
+
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="feature_header text-center">
+                            <h3 class="feature_title">Keep In <b>touch</b></h3>
+                            <h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>
+                            <div class="divider"></div>
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="contact_full">
+                        <div class="col-md-6 left">
+                            <div class="left_contact">
+                                <form action="role">
+                                    <div class="form-level">
+                                        <input name="name" placeholder="Name" id="name"  value="" type="text" class="input-block">
+                                        <span class="form-icon fa fa-user"></span>
+                                    </div>
+                                    <div class="form-level">
+                                        <input name="email" placeholder="Email" id="mail" class="input-block" value="" type="email">
+                                        <span class="form-icon fa fa-envelope-o"></span>
+                                    </div>
+                                    <div class="form-level">
+                                        <input name="name" placeholder="Phone" id="phone" class="input-block" value="" type="text">
+                                        <span class="form-icon fa fa-phone"></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
 
-                <div class="col-md-6">
-                    <div class="video-text">
-                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            <div class="panel panel-default">
-                                <div class="panel-heading p2 active" role="tab" id="headingOne">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Heading One
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                    <div class="panel-body p3">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. 
-                                    </div>
-                                </div>
+                        <div class="col-md-6 right">
+                            <div class="form-level">
+                                <textarea name="" id="messege"  rows="5" class="textarea-block" placeholder="message"></textarea>
+                                <span class="form-icon fa fa-pencil"></span>
                             </div>
-                            <div class="panel panel-default ">
-                                <div class="panel-heading  p2" role="tab" id="headingTwo">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Heading Two
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                    <div class="panel-body p3">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default ">
-                                <div class="panel-heading p2" role="tab" id="headingThree">
-                                    <h4 class="panel-title">
-                                        <a class="accordion-toggle" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Heading Three
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                    <div class="panel-body p3">
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-main featured">Submit Now</button>
                         </div>
                     </div>
-                </div> 
-            </div><!-- row End -->
-        </div>
-    </section>
-    <!-- Team MEmber Start -->
-    <section id="team">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="feature_header text-center">
-                        <h3 class="feature_title">Our <b>Team Members</b></h3>
-                        <h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>
-                        <div class="divider"></div>
-                    </div>
-                </div>  <!-- Col-md-12 End -->
-
-                <div id="owl-demo" class="owl-carousel owl-theme team-items">
-                    <div class="item text-center">
-                        <div class="single-member">
-                            <div class="overlay-hover">
-                                <img src="Style/images/team/pic6.jpg" alt="" class="img-responsive">
-                                <div class="overlay-effect">
-                                    <ul class="social list-inline">
-                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
-                                </div>
-                            </div>
-                            <h3>John Abraham</h3>
-                            <h5>Chief Designer</h5>
-                        </div>
-                    </div>  <!-- item wrapper end -->
-                    <div class="item text-center">
-                        <div class="single-member">
-                            <div class="overlay-hover">
-                                <img src="Style/images/team/pic1.jpg" alt="" class="img-responsive">
-                                <div class="overlay-effect">
-                                    <ul class="social list-inline">
-                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
-                                </div>
-                            </div>
-                            <h3>John Abraham</h3>
-                            <h5>Chief Designer</h5>
-                        </div>
-                    </div>  <!-- item wrapper end -->
-                    <div class="item text-center">
-                        <div class="single-member">
-                            <div class="overlay-hover">
-                                <img src="Style/images/team/pic2.jpg" alt="" class="img-responsive">
-                                <div class="overlay-effect">
-                                    <ul class="social list-inline">
-                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
-                                </div>
-                            </div>
-                            <h3>John Abraham</h3>
-                            <h5>Chief Designer</h5>
-                        </div>
-                    </div>  <!-- item wrapper end -->
-                    <div class="item text-center">
-                        <div class="single-member">
-                            <div class="overlay-hover">
-                                <img src="Style/images/team/pic5.jpg" alt="" class="img-responsive">
-                                <div class="overlay-effect">
-                                    <ul class="social list-inline">
-                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
-                                </div>
-                            </div>
-                            <h3>John Abraham</h3>
-                            <h5>Chief Designer</h5>
-                        </div>
-                    </div>  <!-- item wrapper end -->
-                    <div class="item text-center">
-                        <div class="single-member">
-                            <div class="overlay-hover">
-                                <img src="Style/images/team/pic4.jpg" alt="" class="img-responsive">
-                                <div class="overlay-effect">
-                                    <ul class="social list-inline">
-                                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
-                                </div>
-                            </div>
-                            <h3>John Abraham</h3>
-                            <h5>Chief Designer</h5>
-                        </div>
-                    </div>  <!-- item wrapper end -->
                 </div>
             </div>
-        </div> <!-- Conatiner Team end -->
-    </section>  <!-- Section TEam End -->
+        </section>
 
-    <!-- Our Team Members End -->
-    <div class="clearfix"></div>
-
-    <!-- bLOG Start -->
-    <section id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="feature_header text-center">
-                        <h3 class="feature_title">Our <b>Blog</b></h3>
-                        <h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>
-                        <div class="divider"></div>
-                    </div>
-                </div>  <!-- Col-md-12 End -->
-            </div>
-            <div class="row">
-                <div class="blog-timeline">
-                    <div id="owl-blog" class="owl-carousel owl-theme">
-                        <div class="item ">
-                            <div class="single_blog">
-                                <div class="post_img text-center">
-                                    <a href="Presentation/blog-single.php"><img src="Style/images/blog/pic3.jpg" alt="" class="img-responsive"></a>
-                                    <div class="post-date">
-                                        <span>25</span> 6
-                                    </div>
-                                </div>
-                                <a href="Presentation/blog-single.php"><h4>Lorem ipsum dolor sit amet</h4></a>
-                                <ul class="list-inline">
-                                    <li> <i class="fa fa-pencil"></i> John Smith</li>
-                                    <li> <i class="fa fa-comments"></i> 12</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.</p>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="single_blog">
-                                <div class="post_img text-center">
-                                    <a href="Presentation/blog-single.php"><img src="Style/images/blog/pic4.jpg" alt="" class="img-responsive"></a>
-                                    <div class="post-date">
-                                        <span>25</span> 6
-                                    </div>
-                                </div>
-                                <a href="Presentation/blog-single.php"> <h4>Lorem ipsum dolor sit amet</h4></a>
-                                <ul class="list-inline">
-                                    <li> <i class="fa fa-pencil"></i> John Smith</li>
-                                    <li> <i class="fa fa-comments"></i> 12</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.</p>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="single_blog">
-                                <div class="post_img text-center">
-                                    <a href="Presentation/blog-single.php"><img src="Style/images/blog/pic2.jpg" alt="" class="img-responsive"></a>
-                                    <div class="post-date">
-                                        <span>25</span> 6
-                                    </div>
-                                </div>
-                                <a href="Presentation/blog-single.php"><h4>Lorem ipsum dolor sit amet</h4></a>
-                                <ul class="list-inline">
-                                    <li> <i class="fa fa-pencil"></i> John Smith</li>
-                                    <li> <i class="fa fa-comments"></i> 12</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.</p>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="single_blog">
-                                <div class="post_img text-center">
-                                    <a href="Presentation/blog-single.php"><img src="Style/images/blog/pic5.jpg" alt="" class="img-responsive"></a>
-                                    <div class="post-date">
-                                        <span>25</span> 6
-                                    </div>
-                                </div>
-                                <a href="Presentation/blog-single.php"><h4>Lorem ipsum dolor sit amet</h4></a>
-                                <ul class="list-inline">
-                                    <li> <i class="fa fa-pencil"></i> John Smith</li>
-                                    <li> <i class="fa fa-comments"></i> 12</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.</p>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="single_blog">
-                                <div class="post_img text-center">
-                                    <a href="Presentation/blog-single.php"><img src="Style/images/blog/pic1.jpg" alt="" class="img-responsive"></a>
-                                    <div class="post-date">
-                                        <span>25</span> 6
-                                    </div>
-                                </div>
-                                <a href="Presentation/blog-single.php"><h4>Lorem ipsum dolor sit amet</h4></a>
-                                <ul class="list-inline">
-                                    <li> <i class="fa fa-pencil"></i> John Smith</li>
-                                    <li> <i class="fa fa-comments"></i> 12</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.</p>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="single_blog">
-                                <div class="post_img text-center">
-                                    <a href="Presentation/blog-single.php"><img src="Style/images/blog/pic3.jpg" alt="" class="img-responsive"></a>
-                                    <div class="post-date">
-                                        <span>25</span> 6
-                                    </div>
-                                </div>
-                                <a href="Presentation/blog-single.php"><h4>Lorem ipsum dolor sit amet</h4></a>
-                                <ul class="list-inline">
-                                    <li> <i class="fa fa-pencil"></i> John Smith</li>
-                                    <li> <i class="fa fa-comments"></i> 12</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.</p>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="single_blog">
-                                <div class="post_img text-center">
-                                    <a href="Presentation/blog-single.php"><img src="Style/images/blog/pic2.jpg" alt="" class="img-responsive"></a>
-                                    <div class="post-date">
-                                        <span>25</span> 6
-                                    </div>
-                                </div>
-                                <a href="Presentation/blog-single.php"><h4>Lorem ipsum dolor sit amet</h4></a>
-                                <ul class="list-inline">
-                                    <li> <i class="fa fa-pencil"></i> John Smith</li>
-                                    <li> <i class="fa fa-comments"></i> 12</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.</p>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="single_blog">
-                                <div class="post_img text-center">
-                                    <a href="Presentation/blog-single.php"><img src="Style/images/blog/pic4.jpg" alt="" class="img-responsive"></a> 
-                                    <div class="post-date">
-                                        <span>25</span> 6
-                                    </div>
-                                </div>
-                                <a href="Presentation/blog-single.php"><h4>Lorem ipsum dolor sit amet</h4></a>
-                                <ul class="list-inline">
-                                    <li> <i class="fa fa-pencil"></i> John Smith</li>
-                                    <li> <i class="fa fa-comments"></i> 12</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.</p>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="single_blog">
-                                <div class="post_img text-center">
-                                    <a href="Presentation/blog-single.php"><img src="Style/images/blog/pic1.jpg" alt="" class="img-responsive"></a>
-                                    <div class="post-date">
-                                        <span>25</span> 6
-                                    </div>
-                                </div>
-                                <a href="Presentation/blog-single.php"><h4>Lorem ipsum dolor sit amet</h4></a>
-                                <ul class="list-inline">
-                                    <li> <i class="fa fa-pencil"></i> John Smith</li>
-                                    <li> <i class="fa fa-comments"></i> 12</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.</p>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="single_blog">
-                                <div class="post_img text-center">
-                                    <a href="Presentation/blog-single.php"><img src="Style/images/blog/pic5.jpg" alt="" class="img-responsive"></a>
-                                    <div class="post-date">
-                                        <span>25</span> 6
-                                    </div>
-                                </div>
-                                <a href="Presentation/blog-single.php"><h4>Lorem ipsum dolor sit amet</h4></a>
-                                <ul class="list-inline">
-                                    <li> <i class="fa fa-pencil"></i> John Smith</li>
-                                    <li> <i class="fa fa-comments"></i> 12</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus provident quae maxime consequuntur atque.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- blog Timeline End -->
+        <div id="g-map" class="no-padding">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="map" id="map"></div>
+                </div>
             </div>
         </div>
-    </section>
-    <!-- bLOG End -->
+        <!-- Footer Area Start -->
 
-
-    <!-- Conatct Area Start-->
-
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="feature_header text-center">
-                        <h3 class="feature_title">Keep In <b>touch</b></h3>
-                        <h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>
-                        <div class="divider"></div>
+        <div class="footer_b">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer_bottom">
+                            <p class="text-block"> &copy; Copyright reserved to <span>Cyprass </span></p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="contact_full">
-                    <div class="col-md-6 left">
-                        <div class="left_contact">
-                            <form action="role">
-                                <div class="form-level">
-                                    <input name="name" placeholder="Name" id="name"  value="" type="text" class="input-block">
-                                    <span class="form-icon fa fa-user"></span>
-                                </div>
-                                <div class="form-level">
-                                    <input name="email" placeholder="Email" id="mail" class="input-block" value="" type="email">
-                                    <span class="form-icon fa fa-envelope-o"></span>
-                                </div>
-                                <div class="form-level">
-                                    <input name="name" placeholder="Phone" id="phone" class="input-block" value="" type="text">
-                                    <span class="form-icon fa fa-phone"></span>
-                                </div>
-                            </form>
+                    <div class="col-md-6">
+                        <div class="footer_mid pull-right">
+                            <ul class="social-contact list-inline">
+                                <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-rss"></i></a></li>
+                                <li> <a href="#"><i class="fa fa-google-plus"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-pinterest"></i></a></li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="col-md-6 right">
-                        <div class="form-level">
-                            <textarea name="" id="messege"  rows="5" class="textarea-block" placeholder="message"></textarea>
-                            <span class="form-icon fa fa-pencil"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <button class="btn btn-main featured">Submit Now</button>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Footer Area End -->
 
-    <div id="g-map" class="no-padding">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="map" id="map"></div>
-            </div>
-        </div>
+
+
+    <!-- Back To Top Button -->
+    <!--  <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
+             <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+         </div> -->
+    <div id="back-top">
+        <a href="#slider_part" class="scroll" data-scroll>
+            <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-up"></i></button>
+        </a>
     </div>
-    <!-- Footer Area Start -->
-
-    <div class="footer_b">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="footer_bottom">
-                        <p class="text-block"> &copy; Copyright reserved to <span>Cyprass </span></p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="footer_mid pull-right">
-                        <ul class="social-contact list-inline">
-                            <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-rss"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-google-plus"></i> </a></li>
-                            <li><a href="#"> <i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"> <i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Footer Area End -->
-
-
-
-<!-- Back To Top Button -->
-<!--  <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
-         <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
-     </div> -->
-<div id="back-top">
-    <a href="#slider_part" class="scroll" data-scroll>
-        <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-up"></i></button>
-    </a>
-</div>
-<!-- End Back To Top Button -->
+    <!-- End Back To Top Button -->
     <!-- Javascript Files
         ================================================== -->
     <!-- initialize jQuery Library -->
@@ -739,12 +597,12 @@
     <!-- Custom js -->
     <script src="Style/js/custom.js"></script>
     <script>
-        //function to update the information modal.
-        function modalSelect(modalMessage, modalTitle) {
-            document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
-            document.getElementsByClassName("modal-message")[0].textContent = modalMessage;
-        }
-        ;
+//function to update the information modal.
+function modalSelect(modalMessage, modalTitle) {
+    document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
+    document.getElementsByClassName("modal-message")[0].textContent = modalMessage;
+}
+;
     </script>
     <script>
         var map;
