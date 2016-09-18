@@ -152,10 +152,12 @@ include '../Business/ProductBusiness.php'
                             <div class="col-md-3 col-sm-6">
                                 <div class="rel-post">
                                     <a href="#">
-                                        <img src=<?php $currentProduct->pathImage ?>alt="" class="img-responsive">
+                                        <img src="" alt="" class="img-responsive">
                                         <div class="caption">
-                                            <h4><?php $currentProduct->name ?></h4>
-                                            <p><?php $currentProduct->description ?></p>
+                                            <?php
+                                                echo '<h4>'. $currentProduct->name .'</h4>';
+                                                echo '<p>'. $currentProduct->description .'</p>';
+                                            ?>
                                         </div>
                                     </a>
                                 </div>

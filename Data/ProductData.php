@@ -1,7 +1,7 @@
 <?php
 
-include_once './Data/Data.php';
-include './Domain/Product.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/APROASUR/Data/Data.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/APROASUR/Domain/Product.php';
 
 /**
  * Description of ProductData
