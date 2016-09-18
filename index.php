@@ -448,17 +448,22 @@
                             $productBusiness = new ProductBusiness();
                             $products = $productBusiness->getAllProducts();
                             foreach ($products as $currentProduct) {
-                                echo '<div class="item ">';
-                                echo '<div class="single_blog">';
-                                echo '<div class="post_img text-center">';
-                                echo '<a href="Presentation/ViewProductRecipes.php?productId=' .
-                                $currentProduct->idProduct . '"><img src="./Images/' . $currentProduct->pathImage . '" alt="" class="img-responsive"></a>';
-                                echo '</div>';
-                                echo '<a href="Presentation/ViewProductRecipes.php?productId=' .
-                                $currentProduct->idProduct . '"><h4>' . $currentProduct->name . '</h4></a>';
-                                echo '<p>' . $currentProduct->description . '</p>';
-                                echo '</div>';
-                                echo '</div>';
+                                ?>
+                                <div class="item ">
+                                    <div class="single_blog">
+                                        <div class="post_img text-center">
+                                        <img src=" <?php echo './Images/' . $currentProduct->pathImage; ?> " alt="" class="img-responsive">
+                                        </div>
+                                        <center><h4>  <?php echo $currentProduct->name; ?> </h4></center>
+                                        <p class="text-justify"> <?php echo substr($currentProduct->description, 0, 200) . "..."; ?> </p>
+                                        <center><button onclick="<?php echo "modalSelect('" . substr($currentProduct->description, 0, 667) . "','" . $currentProduct->name . "')"; ?>" type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal">Leer más</button></center>
+                                        <a href="<?php echo 'Presentation/ViewProductRecipes.php?productId=' .
+                                        $currentProduct->idProduct; ?>">
+                                            <center><button type="button" class="btn btn-main">Ver recetas</button></center>
+                                        </a>
+                                    </div>
+                                </div>;
+                                <?php
                             }
                             ?>
                         </div>

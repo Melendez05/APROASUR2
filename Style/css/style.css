@@ -2035,8 +2035,9 @@ textarea:hover {
 
 .single_blog p {
     margin: 5px 0px;
-    font-size: 13px;
+    font-size: 14px;
     text-align: justify;
+    line-height: 24px;
 }
 
 /*Single blog post details

@@ -64,23 +64,20 @@ include '../Business/ProductBusiness.php'
                         <a href="../index.php#slider_part" data-scroll  class="active">Home </a>
                     </li>
                     <li>
-                        <a href="../index.php#service" data-scroll >Services</a>
+                        <a href="../index.php#service" data-scroll >¿Quienes somos?</a>
                     </li>
                     <li>
-                        <a href="../index.php#portfolio" data-scroll  >Portfolio </a>
+                        <a href="../index.php#portfolio" data-scroll  >Planes </a>
                     </li>
                     <li>
-                        <a href="../index.php#about" data-scroll>About Us </a>
-                    </li>
-                    <li>
-                        <a href="../index.php#team" data-scroll  >Our Team </a>
+                        <a href="../index.php#team" data-scroll  >Galeria</a>
                     </li>
 
                     <li>
-                        <a href="../index.php#blog" data-scroll  >Blog </a>
+                        <a href="../index.php#blog" data-scroll  >Productos</a>
                     </li>
                     <li>
-                        <a href="../index.php#contact" data-scroll >Contact Us</a>
+                        <a href="../index.php#contact" data-scroll >Contactenos</a>
                     </li>
                 </ul>
             </nav>
@@ -151,15 +148,18 @@ include '../Business/ProductBusiness.php'
                             ?>
                             <div class="col-md-3 col-sm-6">
                                 <div class="rel-post">
-                                    <a href="#">
+                                  
                                         <?php echo '<img src="../Images/'. $currentProduct->pathImage .'" alt="" class="img-responsive">' ?>
                                         <div class="caption">
                                             <?php
                                                 echo '<h4>'. $currentProduct->name .'</h4>';
-                                                echo '<p>'. $currentProduct->description .'</p>';
                                             ?>
+                                            
                                         </div>
-                                    </a>
+                                        <a href="<?php echo '../Presentation/ViewProductRecipes.php?productId=' .
+                                        $currentProduct->idProduct; ?>">
+                                            <center><button type="button" class="btn btn-main">Ver recetas</button></center>
+                                        </a>
                                 </div>
                             </div>
                             <?php
