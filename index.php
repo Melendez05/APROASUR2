@@ -452,7 +452,7 @@
                                 echo '<div class="single_blog">';
                                 echo '<div class="post_img text-center">';
                                 echo '<a href="Presentation/ViewProductRecipes.php?productId=' .
-                                $currentProduct->idProduct . '"><img src="' . $currentProduct->pathImage . '" alt="" class="img-responsive"></a>';
+                                $currentProduct->idProduct . '"><img src="./Images/' . $currentProduct->pathImage . '" alt="" class="img-responsive"></a>';
                                 echo '</div>';
                                 echo '<a href="Presentation/ViewProductRecipes.php?productId=' .
                                 $currentProduct->idProduct . '"><h4>' . $currentProduct->name . '</h4></a>';
