@@ -214,7 +214,7 @@
                         ?>                        
                         <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio Ietapa ">
                             <figure>
-                                <img src="Style/images/portfolio/p1.jpg" alt="" class="img-responsive"/>                            
+                                <img src="Images/pejibaye.jpg" alt="" class="img-responsive"/>                            
                                 <figcaption>
                                     <p class="links">                 
                                         <button onclick=" <?php echo "modalSelect( '" . $currentProgramI->description . "','" . $currentProgramI->name . "' )"; ?>" type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal">
@@ -231,7 +231,7 @@
                         ?>                   
                         <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio IIetapa ">
                             <figure>
-                                <img src="Style/images/portfolio/p1.jpg" alt="" class="img-responsive"/>                            
+                                <img src="Images/pejibaye.jpg" alt="" class="img-responsive"/>                            
                                 <figcaption>
                                     <p class="links">                 
                                         <button onclick=" <?php echo "modalSelect( '" . $currentProgramII->description . "','" . $currentProgramII->name . "' )"; ?>" type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal">
