@@ -35,4 +35,15 @@ class ProgramData extends Data {
         
     }
     
+    public function getImagesProgram(){
+        $conn = new mysqli($this->server, $this->user, $this->password, $this->db);
+        $result = mysqli_query($conn, "call getImagesProgram");        
+        $array = [];
+        while($row = mysqli_fetch_array($result)){
+            array_push($array, $row['path']);
+        }        
+        return $array;
+    }
+    
+    
 }
