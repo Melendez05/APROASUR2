@@ -379,7 +379,7 @@
 
                     <!--Contenido principal-->
                     <div class="modal-body">
-                        <img id="imageModal" src="" alt=""  class="img-responsive" style="max-width: 50%; height: auto;">
+                        <img id="imageModal" src="" alt=""  class="img-responsive" >
                     </div>
                     <!--Fin del contenido principal-->
 
