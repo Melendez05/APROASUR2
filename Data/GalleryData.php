@@ -2,7 +2,7 @@
 /**
  * Description of GalleryData
  */
-include './Data/Data.php';
+include './Data.php';
 include './Domain/Image.php';
 
 class GalleryData extends Data {

@@ -349,7 +349,7 @@
                                             <div class="overlay-hover">
                                                 <img src="'.$image->path.'" alt="" class="img-responsive">';
                         ?>
-                                                <a onClick="<?php echo "modalSelectGallery('" . $image->description . "','" . $image->path . "')"; ?>" data-toggle="modal" data-target="#myModal">    
+                                                <a onClick="<?php echo "modalSelectGallery('" . $image->description . "','" . $image->path . "')"; ?>" data-toggle="modal" data-target="#myModal2">    
                         <?php
                                               echo '<div class="overlay-effect">
                                                         <p>'.$image->description.'</p>
@@ -366,7 +366,7 @@
         </section>  <!-- Section TEam End -->
 
         <!-------------------- Ventna modal ------------------->
-        <div id="myModal" class="modal fade" role="dialog">
+        <div id="myModal2" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content" style="background-color: dimgray;">
@@ -580,7 +580,7 @@ function modalSelect(modalMessage, modalTitle) {
         //function to update the information modal.
         function modalSelectGallery(description, path) {
             document.getElementById("imageModal").src = path;
-            document.getElementsByClassName("modal-title")[0].textContent = description;
+            document.getElementsByClassName("modal-title")[1].textContent = description;
             //document.getElementsByClassName("modal-message")[0].textContent = '<img src="Style/images/team/pic5.jpg" alt="" class="img-responsive">';
         }
         ;
