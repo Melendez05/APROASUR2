@@ -42,14 +42,23 @@
         <!--inclusions-->
         <?php
         include './Business/OrganizationBusiness.php';
+       
         include './Business/PlanBusiness.php';
+         
         include './Business/ProgramBusiness.php';
+       
         include './Business/ProductBusiness.php';
+        
+        include './Business/GalleryBusiness.php';
+        
         ?>
         <!--instances-->
         <?php
         $organizationBusiness = new OrganizationBusiness();
         $organization = $organizationBusiness->getOrganization();
+        
+        $GB = new GalleryBusiness();
+        $listImage = $GB->getAllImageBusiness();
         ?>
     </head>
 
@@ -314,117 +323,71 @@
             </div>
         </section>
         <!-- Team MEmber Start -->
+        
+        <!------------------------------ Galeria ------------------------------------>
         <section id="team">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="feature_header text-center">
                             <h3 class="feature_title">Our <b>Team Members</b></h3>
-                            <h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>
+                            <h4 class="feature_sub">
+                                Bienvenido a la seccion de galeria, disfruta de nuestra diversa seleccion de imagenes. 
+                            </h4>
+                            <!-- Boton para ventana modal -->
+
+
                             <div class="divider"></div>
                         </div>
                     </div>  <!-- Col-md-12 End -->
 
                     <div id="owl-demo" class="owl-carousel owl-theme team-items">
-                        <div class="item text-center">
-                            <div class="single-member">
-                                <div class="overlay-hover">
-                                    <img src="Style/images/team/pic6.jpg" alt="" class="img-responsive">
-                                    <div class="overlay-effect">
-                                        <ul class="social list-inline">
-                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                            <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
-                                    </div>
-                                </div>
-                                <h3>John Abraham</h3>
-                                <h5>Chief Designer</h5>
-                            </div>
-                        </div>  <!-- item wrapper end -->
-                        <div class="item text-center">
-                            <div class="single-member">
-                                <div class="overlay-hover">
-                                    <img src="Style/images/team/pic1.jpg" alt="" class="img-responsive">
-                                    <div class="overlay-effect">
-                                        <ul class="social list-inline">
-                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                            <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
-                                    </div>
-                                </div>
-                                <h3>John Abraham</h3>
-                                <h5>Chief Designer</h5>
-                            </div>
-                        </div>  <!-- item wrapper end -->
-                        <div class="item text-center">
-                            <div class="single-member">
-                                <div class="overlay-hover">
-                                    <img src="Style/images/team/pic2.jpg" alt="" class="img-responsive">
-                                    <div class="overlay-effect">
-                                        <ul class="social list-inline">
-                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                            <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
-                                    </div>
-                                </div>
-                                <h3>John Abraham</h3>
-                                <h5>Chief Designer</h5>
-                            </div>
-                        </div>  <!-- item wrapper end -->
-                        <div class="item text-center">
-                            <div class="single-member">
-                                <div class="overlay-hover">
-                                    <img src="Style/images/team/pic5.jpg" alt="" class="img-responsive">
-                                    <div class="overlay-effect">
-                                        <ul class="social list-inline">
-                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                            <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
-                                    </div>
-                                </div>
-                                <h3>John Abraham</h3>
-                                <h5>Chief Designer</h5>
-                            </div>
-                        </div>  <!-- item wrapper end -->
-                        <div class="item text-center">
-                            <div class="single-member">
-                                <div class="overlay-hover">
-                                    <img src="Style/images/team/pic4.jpg" alt="" class="img-responsive">
-                                    <div class="overlay-effect">
-                                        <ul class="social list-inline">
-                                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                            <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                        </ul>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
-                                    </div>
-                                </div>
-                                <h3>John Abraham</h3>
-                                <h5>Chief Designer</h5>
-                            </div>
-                        </div>  <!-- item wrapper end -->
+                        <?php
+                            foreach ($listImage as $image) {
+                                echo'<div class="item text-center">
+                                        <div class="single-member">
+                                            <div class="overlay-hover">
+                                                <img src="'.$image->path.'" alt="" class="img-responsive">';
+                        ?>
+                                                <a onClick="<?php echo "modalSelectGallery('" . $image->description . "','" . $image->path . "')"; ?>" data-toggle="modal" data-target="#myModal">    
+                        <?php
+                                              echo '<div class="overlay-effect">
+                                                        <p>'.$image->description.'</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>';
+                            }
+                        ?>
                     </div>
                 </div>
             </div> <!-- Conatiner Team end -->
         </section>  <!-- Section TEam End -->
+
+        <!-------------------- Ventna modal ------------------->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content" style="background-color: dimgray;">
+
+                    <!--Titulo-->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+
+                    <!--Contenido principal-->
+                    <div class="modal-body">
+                        <img id="imageModal" src="" alt=""  class="img-responsive" style="max-width: 50%; height: auto;">
+                    </div>
+                    <!--Fin del contenido principal-->
+
+                </div>
+            </div>
+        </div>
+        <!-- ---------------------End Modal --------------------->
+        <!-------------------------------------Fin de galeria-------------------------->
 
         <!-- Our Team Members End -->
         <div class="clearfix"></div>
@@ -523,7 +486,7 @@
                 </div>
             </div>
         </section>
-
+ <section>
         <div id="g-map" class="no-padding">
             <div class="container-fluid">
                 <div class="row">
@@ -611,6 +574,16 @@ function modalSelect(modalMessage, modalTitle) {
     document.getElementsByClassName("modal-message")[0].textContent = modalMessage;
 }
 ;
+    </script>
+    
+    <script>
+        //function to update the information modal.
+        function modalSelectGallery(description, path) {
+            document.getElementById("imageModal").src = path;
+            document.getElementsByClassName("modal-title")[0].textContent = description;
+            //document.getElementsByClassName("modal-message")[0].textContent = '<img src="Style/images/team/pic5.jpg" alt="" class="img-responsive">';
+        }
+        ;
     </script>
     <script>
         var map;

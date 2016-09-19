@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Description of PlanData
+ */
 class Data {
     public $server;
     public $user;

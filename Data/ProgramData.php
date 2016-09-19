@@ -11,7 +11,7 @@ include './Domain/Program.php';
 class ProgramData extends Data {
     
     public function getInformationProgramI(){        
-        $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
+        $conn = new mysqli($this->server, $this->user, $this->password, $this->db);
         $conn->set_charset('utf8');
         $result = mysqli_query($conn, "call getInformationProgramI");        
         $array = [];
@@ -23,7 +23,7 @@ class ProgramData extends Data {
         
     }
     public function getInformationProgramII(){        
-        $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
+        $conn = new mysqli($this->server, $this->user, $this->password, $this->db);
         $conn->set_charset('utf8');
         $result = mysqli_query($conn, "call getInformationProgramII");        
         $array = [];

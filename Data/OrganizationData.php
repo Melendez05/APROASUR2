@@ -13,8 +13,10 @@ class OrganizationData extends Data {
         mysqli_close($conn);
         $row = mysqli_fetch_array($result);
         $organization = new Organization($row['id_organization'], $row['name'], $row['history'], $row['mission'], $row['view'], $row['comission']);
-//        echo  $organization->comission;
+//        echo  $organization->comission . " test";
 //        exit;
+        
+        
         return $organization;
     }
 

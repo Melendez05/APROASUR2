@@ -1,8 +1,9 @@
 <?php
-
-include_once $_SERVER['DOCUMENT_ROOT'].'/APROASUR/Data/Data.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/APROASUR/Domain/Product.php';
-
+ error_reporting(0); 
+include './Data.php';
+include './Domain/Product.php';
+//include_once $_SERVER['DOCUMENT_ROOT'].'/APROASUR/Data/Data.php';
+//include_once $_SERVER['DOCUMENT_ROOT'].'/APROASUR/Domain/Product.php';
 /**
  * Description of ProductData
  *
@@ -12,7 +13,8 @@ class ProductData extends Data {
     
     /* metodo obtiene todos los productos de la BD */
     public function getAllProducts(){
-        $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
+       
+        $conn = new mysqli($this->server, $this->user, $this->password, $this->db);
         $query = "call sp_getAllProducts()";
         $result = mysqli_query($conn, $query);
         mysqli_close($conn);
