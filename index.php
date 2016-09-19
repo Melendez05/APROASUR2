@@ -219,11 +219,13 @@
                     <?php
                     $programBusiness = new ProgramBusiness();
                     $resultProgramI = $programBusiness->getInformationProgramI();
-                    foreach ($resultProgramI as $currentProgramI) {
+                    $resultImages = $programBusiness->getImagesProgram();
+                    $cout = 0;
+                    foreach ($resultProgramI as $currentProgramI) {                        
                         ?>                        
                         <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio Ietapa ">
                             <figure>
-                                <img src="Images/pejibaye.jpg" alt="" class="img-responsive"/>                            
+                               <img src="<?php echo $resultImages[$cout++]; ?>" alt="" class="img-responsive"/>
                                 <figcaption>
                                     <p class="links">                 
                                         <button onclick=" <?php echo "modalSelect( '" . $currentProgramI->description . "','" . $currentProgramI->name . "' )"; ?>" type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal">
@@ -240,7 +242,7 @@
                         ?>                   
                         <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio IIetapa ">
                             <figure>
-                                <img src="Images/pejibaye.jpg" alt="" class="img-responsive"/>                            
+                                <img src="<?php echo $resultImages[$cout]; ?>" alt="" class="img-responsive"/>                            
                                 <figcaption>
                                     <p class="links">                 
                                         <button onclick=" <?php echo "modalSelect( '" . $currentProgramII->description . "','" . $currentProgramII->name . "' )"; ?>" type="button" class="btn btn-main" data-toggle="modal" data-target="#myModal">

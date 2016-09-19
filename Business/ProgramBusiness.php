@@ -23,5 +23,8 @@ class ProgramBusiness {
     public function getInformationProgramII(){
         return $this->programData->getInformationProgramII();
     }
+    public function getImagesProgram(){
+        return $this->programData->getImagesProgram();                
+    }
     
 }
