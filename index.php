@@ -91,7 +91,7 @@
                 </video>
             </div> 
 
-            <div class="parallax-overlay"></div>
+            <!--<div class="parallax-overlay"></div>-->
 
             <div class="container">
                 <div class="hero-content text-center">
@@ -257,7 +257,7 @@
                         <div class="landing-video">
                             <div class="video-embed wow fadeIn" data-wow-duration="1s">
                                 <!-- Change the url -->
-                                <iframe src="http://player.vimeo.com/video/95864492?title=0&amp;byline=0&amp;portrait=0&amp;color=8aba56" width="350" height="281" allowfullscreen></iframe>
+                                <iframe src="https://player.vimeo.com/video/183091597?title=0&amp;byline=0&amp;portrait=0&amp;color=8aba56" width="350" height="281" allowfullscreen></iframe>      
                             </div>
                         </div>
                     </div>
@@ -480,42 +480,45 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="feature_header text-center">
-                            <h3 class="feature_title">Keep In <b>touch</b></h3>
-                            <h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>
+                            <h3 class="feature_title"><b>Estamos para servir</b></h3>
+                            <h4 class="feature_sub" style="margin-left: 15%">Para cualquier consulta escríbenos, nos gustaría seber de tí y de tus opiniones sobre APROASUR</h4>
                             <div class="divider"></div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="contact_full">
-                        <div class="col-md-6 left">
-                            <div class="left_contact">
-                                <form action="role">
-                                    <div class="form-level">
-                                        <input name="name" placeholder="Name" id="name"  value="" type="text" class="input-block">
-                                        <span class="form-icon fa fa-user"></span>
-                                    </div>
-                                    <div class="form-level">
-                                        <input name="email" placeholder="Email" id="mail" class="input-block" value="" type="email">
-                                        <span class="form-icon fa fa-envelope-o"></span>
-                                    </div>
-                                    <div class="form-level">
-                                        <input name="name" placeholder="Phone" id="phone" class="input-block" value="" type="text">
-                                        <span class="form-icon fa fa-phone"></span>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                    	<form name="frmContacto" method="post" action="smtp.php">
+	                        <div class="col-md-6 left">
+	                            <div class="left_contact">
+	                                
+	                                    <div class="form-level">
+	                                        <input name="name" placeholder="Name" id="name"  value="" type="text" class="input-block">
+	                                        <span class="form-icon fa fa-user"></span>
+	                                    </div>
+	                                    <div class="form-level">
+	                                        <input name="email" placeholder="Email" id="mail" class="input-block" value="" type="email">
+	                                        <span class="form-icon fa fa-envelope-o"></span>
+	                                    </div>
+	                                    <div class="form-level">
+	                                        <input name="telephone" placeholder="Phone" id="phone" class="input-block" value="" type="text">
+	                                        <span class="form-icon fa fa-phone"></span>
+	                                    </div>
+	                                
+	                            </div>
+	                        </div>
 
-                        <div class="col-md-6 right">
-                            <div class="form-level">
-                                <textarea name="" id="messege"  rows="5" class="textarea-block" placeholder="message"></textarea>
-                                <span class="form-icon fa fa-pencil"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-12 text-center">
-                            <button class="btn btn-main featured">Submit Now</button>
-                        </div>
+	                        <div class="col-md-6 right">
+	                            <div class="form-level">
+	                                <textarea name="comments" id="messege"  rows="5" class="textarea-block" placeholder="message"></textarea>
+	                                <span class="form-icon fa fa-pencil"></span>
+	                            </div>
+	                        </div>
+	                        <div class="col-md-12 text-center">
+	                        	<input type="submit" value="Enviar" class="btn btn-main featured">
+	                            
+	                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -535,7 +538,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="footer_bottom">
-                            <p class="text-block"> &copy; Copyright reserved to <span>Cyprass </span></p>
+                            <p class="text-block"> &copy;  <span>Copyright reserved to APROASUR</span></p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -613,16 +616,16 @@ function modalSelect(modalMessage, modalTitle) {
         var map;
         map = new GMaps({
             div: '#map',
-            lat: 23.709921,
-            lng: 90.407143,
+            lat: 9.809679,
+            lng: -83.703649,
             scrollwheel: false,
             panControl: false,
             zoomControl: false,
         });
 
         map.addMarker({
-            lat: 23.709921,
-            lng: 90.407143,
+            lat: 9.809679,
+            lng: -83.703649,
             title: 'Themeturn',
             infoWindow: {
                 content: '<p> ThemeTurn, Dhanmondhi 27</p>'
